@@ -8,14 +8,19 @@ Use this program to mine MicroCoins
 ```
 git clone https://github.com/MicroCoinHU/MicroCoinMiner.git
 ```
-2. Build with lazarus
+2. Update submodules
 ```
 cd MicroCoinMiner
+git submodule init
+git submodule update
+```
+4. Build with lazarus
+```
 lazbuild MicroCoinMiner.lpi
 ```
-3. Copy [microcoinsha.cl](src/microcoinsha.cl) to output folder
-4. Copy [libeay32.dll](https://github.com/MicroCoinHU/MicroCoinMiner/releases/download/1.0.0/libeay32.dll) to output folder
-5. Run
+5. Copy [microcoinsha.cl](src/microcoinsha.cl) to output folder
+6. Copy [libeay32.dll](https://github.com/MicroCoinHU/MicroCoinMiner/releases/download/1.0.0/libeay32.dll) to output folder
+7. Run
 ```
 MicroCoinMiner
 ```
