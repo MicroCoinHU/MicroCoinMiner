@@ -14,7 +14,7 @@ cd MicroCoinMiner
 lazbuild MicroCoinMiner.lpi
 ```
 3. Copy [microcoinsha.cl](src/microcoinsha.cl) to output folder
-4. Copy libeay32.dll to output folder
+4. Copy [libeay32.dll](https://github.com/MicroCoinHU/MicroCoinMiner/releases/download/1.0.0/libeay32.dll) to output folder
 5. Run
 ```
 MicroCoinMiner
