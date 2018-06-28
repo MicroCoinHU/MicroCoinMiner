@@ -26,7 +26,12 @@ interface
 uses
   CL,
   CL_GL,
+  {$IFDEF WINDOWS}
   Windows,
+  {$ENDIF}
+  {$IFDEF LINUX}
+  glx,
+  {$ENDIF}
   SysUtils,
   dglOpenGL,
   CL_Platform;
@@ -1835,7 +1840,7 @@ begin
     WriteLog('CL_DEVICE_EXTENSIONS: ' + FExtensionsString + ';');
   {$ENDIF}
 
-  FExtensionsCount := 0;
+  FExtensionsCount := 1;
   i := 1;
   while (i<=Length(FExtensionsString)) do
   begin
@@ -1860,6 +1865,11 @@ begin
   begin
     if ((FExtensionsString[current]=AnsiString(' ')) or (FExtensionsString[current]=#0)) then
     begin
+      if(i>15) then begin
+        asm
+        nop;
+        end;
+      end;
       if (current>previous) then FExtensions[i] := UpperCase( Copy(FExtensionsString, previous, current-previous-1));
       previous := current + 1;
       inc(i);
@@ -2195,9 +2205,9 @@ begin
     props[3] := wglGetCurrentDC();//glXGetCurrentDisplay(),
   {$ENDIF}
   {$IFDEF LINUX}
-    props[1] := glXGetCurrentContext();
+    props[1] := TCL_uint(glXGetCurrentContext());
     props[2] := CL_GLX_DISPLAY_KHR;
-    props[3] := glXGetCurrentDisplay();
+    props[3] := TCL_uint(glXGetCurrentDisplay());
   {$ENDIF}
   props[4] := 0;
 
@@ -2572,7 +2582,11 @@ var
   EndTime: TCL_ulong;
 {$ENDIF}
 begin
-  ZeroMemory(@origin, SizeOf(origin));
+  {$IFDEF LINUX}
+//    FillByte(origin, SizeOf(origin),0);
+  {$ELSE}
+    ZeroMemory(@origin, SizeOf(origin));
+  {$ENDIF}
   region[0] := Image.Width;
   region[1] := Image.Height;
   region[2] := 1;// Image 2D
@@ -2611,7 +2625,11 @@ var
   EndTime: TCL_ulong;
 {$ENDIF}
 begin
-  ZeroMemory(@origin, SizeOf(origin));
+  {$IFDEF LINUX}
+//    FillByte(origin, SizeOf(origin),0);
+  {$ELSE}
+    ZeroMemory(@origin, SizeOf(origin));
+  {$ENDIF}
   region[0] := Width;
   region[1] := Height;
   region[2] := 1;// Image 2D

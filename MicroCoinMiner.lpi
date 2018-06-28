@@ -72,7 +72,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="bin\$(TargetCPU)\$(TargetOS)\MicroCoinMiner"/>
+      <Filename Value="bin\$(TargetCPU)-$(TargetOS)\MicroCoinMiner"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
