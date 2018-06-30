@@ -4,7 +4,7 @@ dist: bionic
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y lazarus
+  - sudo apt-get install -y lazarus-1.6
 
 script:
   - lazbuild MicroCoinMiner.lpi
