@@ -53,7 +53,7 @@
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_DcuOutput>lib</DCC_DcuOutput>
         <DCC_BplOutput>bin</DCC_BplOutput>
-        <DCC_UnitSearchPath>C:\Source\MicroCoinMiner\src\MicroCoin\Core;C:\Source\MicroCoinMiner\src\MicroCoin\Synapse;C:\Source\MicroCoinMiner\src\MicroCoin\Utils;C:\Source\MicroCoinMiner\src\PasOpenCL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>src\MicroCoin\Core;src\MicroCoin\Synapse;src\MicroCoin\Utils;src\PasOpenCL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
