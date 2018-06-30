@@ -107,3 +107,7 @@ bin/
 lib/
 build-scripts
 /releases
+*.stat
+*.indentcache
+*.local
+__history
