@@ -1,6 +1,6 @@
 language: generic
 sudo: required
-dist: bionic
+dist: xenial
 
 before_install:
   - sudo apt-get update
