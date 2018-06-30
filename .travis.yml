@@ -7,5 +7,5 @@ before_install:
   - sudo apt-get install -y lazarus
 
 script:
-  - lazbuild $LAZ_OPT MicroCoinMiner.lpi
+  - lazbuild MicroCoinMiner.lpi
 
