@@ -1865,11 +1865,6 @@ begin
   begin
     if ((FExtensionsString[current]=AnsiString(' ')) or (FExtensionsString[current]=#0)) then
     begin
-      if(i>15) then begin
-        asm
-        nop;
-        end;
-      end;
       if (current>previous) then FExtensions[i] := UpperCase( Copy(FExtensionsString, previous, current-previous-1));
       previous := current + 1;
       inc(i);

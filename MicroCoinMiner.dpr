@@ -4,7 +4,7 @@ program MicroCoinMiner;
 {$mode objfpc}{$H+}
 {$endif}
 {$DEFINE UseCThreads}
-{$I ./MicroCoin/Core/config.inc}
+{$I src/MicroCoin/Core/config.inc}
 
 { Copyright (c) 2017 by Peter Nemeth
 
@@ -23,7 +23,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, SysUtils,{$ifdef fpc} crt, {$else}Windows,{$endif} CustApp, SyncObjs,
+  Classes, SysUtils,{$ifdef fpc} crt, {$else}{$ifdef MSWINDOWS}Winapi.Windows,{$endif}{$endif} CustApp, SyncObjs,
   UBlockChain, UPoolMinerThreads, UGPUMining,
   UPoolMining, ULog, UThread, UAccounts, UCrypto,
   UConst, UTime, UJSONFunctions, UNode, UNetProtocol, USha256,
