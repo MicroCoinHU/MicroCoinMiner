@@ -1,5 +1,7 @@
 # MicroCoin Miner
 
+[![GitHub license](https://img.shields.io/github/license/MicroCoinHU/microcoind.svg)](https://github.com/MicroCoinHU/microcoind/blob/master/LICENSE) [![Build Status](https://travis-ci.org/MicroCoinHU/MicroCoinMiner.svg?branch=master)](https://travis-ci.org/MicroCoinHU/MicroCoinMiner)
+
 Use this program to mine MicroCoins
 
 ## How to build
