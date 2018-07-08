@@ -26,7 +26,7 @@ __constant static const uint k[64] = {
   };
 
 
-__kernel void pascalcoin(__global uint *midstateIn, __global int *nonceOut) {
+__kernel void microcoin(__global uint *midstateIn, __global int *nonceOut) {
     /*
     midstateIn is an array[0..28]
     midstateIn[0..15] = data for last chunk
